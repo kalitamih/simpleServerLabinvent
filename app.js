@@ -9,6 +9,8 @@ const form = require('./routes');
 
 const constants = require('./constants');
 
+const port = process.env.PORT || 3001;
+
 const { LinkMongoDB } = constants;
 
 mongoose.connect(LinkMongoDB, { useNewUrlParser: true });
@@ -49,4 +51,4 @@ app.use((error, req, res) => {
   });
 });
 
-app.listen(3001);
+app.listen(port);
